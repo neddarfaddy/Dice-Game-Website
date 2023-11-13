@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.cdnfonts.com/css/red-hat-display" rel="stylesheet">
+                <link rel="stylesheet" href="./assets/css/css.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Faddy's Game</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+  
+  @import url('https://fonts.cdnfonts.com/css/red-hat-display');
+* {
+  font-family: 'Red Hat Display', sans-serif;
+  color: white;
+ 
+
+}
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+header {
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+main {
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:#000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #646464;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #635252;
+}
+
+body {
+  background-color: #0e0e0e;
+
+}
+header {
+  background-color: rgba(5, 5, 5, 0.966);
+  height: 7vh;
+  margin-left: auto;
+  width: 92vw;
+  display: flex;
+  align-content: center;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background-color: rgb(12, 12, 12);
+  width: 8vw;
+  display: flex;
+  margin-top: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+} 
+nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  
+  gap: 62px;
+ 
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+}
+nav a:nth-child(4) {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  background-color: white;
+ padding: 22px;
+}
+.input {
+ 
+  display: flex;
+  padding-left: 0px;
+  align-items: center;
+  flex: 2.6;
+}
+.input input {
+  margin-left: 30px;
+  padding: 5px 160px 5px 15px;
+  border: none;
+  color: white;
+  background-color: rgb(13, 13, 13);
+}
+::placeholder {
+  color: white;
+  font-weight: 40;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  margin-top: 8vh;
+  text-align: center;
+  margin-left: auto;
+  margin-inline: auto;
+  width: 62vw;
+}
+.head > h1 {
+  font-size: 100px;
+
+}
+
+.hero {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar > a > img {
+  width: 40px;
+}
+section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 63vh;
+  
+  margin-top: 6vh;
+}
+.player1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: #e4e4e4;
+  height: 100%;
+}
+.player1 > p {
+  color: #000000;
+}
+.middle h3 {
+  font-weight: 30;
+}
+.player2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  background-color: rgb(27, 27, 27)
+}
+.middle {
+  flex: 1;
+  height: 100%;
+  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.middle > button {
+  border: none;
+  color: #000000;
+  padding: 10px 70px;
+  font-size: 25px;
+  transition: transform 1.0s ease-in-out;
+}
+.middle > button:hover {
+ transform: scale(1.2);
+}
+p {
+  font-size: 40px;
+  font-weight: 40;
+}
+.player2 > img {
+  width: 283px;
+  
+}
+
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loader-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #000000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (max-width: 600px) {
+  p {
+    font-size: 10px;
+    font-weight: 40;
+  }
+  .player2 > img {
+    width: 283px;
+    
+  }
+  section {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    
+    margin-top: 0vh;
+  }
+  .player1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    background-color: #e4e4e4;
+    height: 100%;
+  }
+  .player1 > p {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 40;
+  }
+  .player2 > p {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 40;
+  }
+  .middle h3 {
+    font-weight: 30;
+    font-size: 30px;
+    display: block;
+  }
+  .player2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    background-color: rgb(27, 27, 27)
+  }
+  .middle {
+    flex: 1;
+    height: 100%;
+    gap: 10px;
+    width: 100%;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .middle > button {
+    border: none;
+    
+    color: #000000;
+    width: 100%;
+    padding: 10px 71px;
+    font-size: 25px;
+    transition: transform 1.0s ease-in-out;
+  }
+  .middle > button:hover {
+   transform: scale(1.2);
+  }
+  p {
+    font-size: 70px;
+    font-weight: 40;
+  }
+  .player2 > img {
+    width: 40%;
+    
+  }
+  .player1 > img {
+    width: 40%;
+    
+  }
+  main > h1 {
+    font-size: 35px;
+    width: 100%;
+    
+
+  
+  }
+  
+  Main {
+height: 145vh;
+display: flex;
+margin: auto;
+margin-top: 4vh;
+width: 100%;
+padding: 20px;
+    padding-bottom: 20px;
+gap: 170px;
+   flex-direction: column;
+  }
+  
+  .hero {
+    flex-direction: column;
+  }
+  header {
+    background-color: rgb(0, 0, 0);
+    height: 8vh;
+    
+    width: 100vw;
+    display: flex;
+    align-content: center;
+  }
+  nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 62px;
+   
+  }
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+  }
+  nav a:nth-child(4) {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    background-color: white;
+   padding: 22px;
+  }
+  .input {
+    display: none;
+  }
+  .hide {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-spinner"></div>
+  </div>
+  <section class="sidebar">
+    <a href=""><img src="./icons8-email-96.png" alt=""></a>
+    <a href="https://www.facebook.com/profile.php?id=100043281485566"><img src="./icons8-facebook-96.png" alt=""></a>
+   <a href=""><img src="./icons8-instagram-96.png" alt=""></a>
+   <a href="https://www.linkedin.com/in/neddar-faddy-54369023b/"> <img src="./icons8-linkedin-96.png" alt=""></a>
+  </section>
+ <header>
+  <div class="input">
+    <input type="text" placeholder="Search">
+  </div>
+  <nav>
+    <a  href="./index.html">Home</a>
+    <a class="hide" href="">Dice Game</a>
+    <a class="hide" href="">Portfolio</a>
+    <a class="hide" href="">Contact</a>
+
+  </nav>
+ </header>
+
+<main>
+  <h1>Welcome to Faddy’s Dice Game</h1>
+  <section>
+    <div class="player1">
+      <p>Player 1</p>
+      <img id="player1Dice" src="./images/dice6b.png" alt="">
+      <p id="player1Wins">Wins: 0</p>
+    </div>
+    <div class="middle">
+      <h3 id="result">Result</h3>
+      <button onclick="who ()"> Roll</button>
+      <button onclick="reset ()"style="padding: 10px 60px;" onclick="who ()"> Reset</button>
+    </div>
+    <div class="player2">
+      <p>Player 2</p>
+
+      <img id="player2Dice" src="./images/dice6.png" alt="">
+      <p id="player2Wins">Wins: 0</p></div>
+  </section>
+</main>
+
+
+
+ 
+<script>
+  let p1Win =0
+  let p2Win =0
+  function reset () {
+    p1Win =0
+  p2Win =0
+  document.getElementById('player1Wins').textContent=`Wins : ${p1Win}`
+  document.getElementById('player2Wins').textContent=`Wins : ${p2Win}`
+  }
+  function who () {
+  let p1 = Math.floor(Math.random() * 6 + 1)
+  let p2 = Math.floor(Math.random() * 6 + 1)
+  
+  let dice = document.getElementById('player1Dice')
+  player1Dice.setAttribute('src', `./images/dice${p1}b.png`);
+  player2Dice.setAttribute('src', `./images/dice${p2}.png`);
+  if (p1>p2) {
+    document.getElementById('result').textContent='Player 1 won !'
+    p1Win++
+    document.getElementById('player1Wins').textContent=`Wins : ${p1Win}`
+    
+  }
+  else if (p1<p2) {
+    document.getElementById('result').textContent='Player 2 won !'
+    p2Win++
+    document.getElementById('player2Wins').textContent=`Wins : ${p2Win}`
+    
+  }
+  else {
+    document.getElementById('result').textContent='Draw !'
+    
+    document.getElementById('player2Wins').textContent=`Wins : ${p2Win}`
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Add a delay to simulate a loading process
+  setTimeout(function () {
+    document.getElementById('loader').style.display = 'none';
+    document.body.style.display = 'block'; // Show the body
+  }, 1000); // Adjust the time as needed
+});
+
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

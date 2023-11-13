@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add your styles here */
+  </style>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <button onclick="
+  calculate ()">Heads</button>
+  <button onclick="
+  calculate ()">Tails</button>
+  <h2>Your choice:</h2>
+ <h3>The Computer's Choice:</h3>
+ 
+ <h4></h4>
+  <script>
+let result = ''
+let value =Math.random()
+
+
+function calculate () {
+  result= value > 0.5 ? 'Heads' : 'Tails';
+  let playerChoice= document.querySelector('button').innerHTML
+  if (playerChoice===result) {
+   document.querySelector('h2').innerHTML=` Your choice: ${playerChoice}`;
+   document.querySelector('h3').innerHTML=`The Computer's Choice : ${result}`;
+   document.querySelector('h4').innerHTML='You guessed it right! you win!';
+  }
+  else {
+    document.querySelector('h2').innerHTML=` Your choice: ${playerChoice}`;
+   document.querySelector('h3').innerHTML=`The Computer's Choice : ${result}`;
+   document.querySelector('h4').innerHTML='You guessed it Wrong! you Lose!';
+  }
+
+
+  
+
+
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add your styles here */
+  </style>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+
+<button onclick="Rock ()" id="rock">Rock</button>
+<button onclick="Paper ()" id="paper">Paper</button>
+<button onclick="Scissors ()" id="scissors">Scissors</button>
+
+<h1 id="computerPick">The computer's Pick:</h1>
+<h1 id="playerPick">Your Pick:</h1>
+<h1 id="outcome">result</h1>
+
+
+
+  <script>
+function ComputerPick () {
+
+let value = Math.random()
+let result = ''
+if (value >=0 && value <1/3) {
+  result = 'Scissors'
+} 
+if (value >=1/3 && value <2/3) {
+  result = 'Paper'
+} 
+if (value >=2/3 && value <1) {
+  result = 'Rock'
+} 
+return result
+}
+let computerResult = ComputerPick ();
+function Rock () {
+  var computerResult = ComputerPick();
+var playerChoice = document.getElementById('rock').innerHTML
+
+if (computerResult==='Rock') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Draw!'
+}
+else if (computerResult==='Paper') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Lose!'
+}
+else {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Win!'
+}
+
+
+
+}
+function Paper () {
+  var computerResult = ComputerPick();
+var playerChoice = document.getElementById('paper').innerHTML
+
+if (computerResult==='Paper') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Draw!'
+}
+else if (computerResult==='Scissors') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Lose!'
+}
+else {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Win!'
+}
+
+
+
+}
+function Scissors () {
+  var computerResult = ComputerPick();
+var playerChoice = document.getElementById('scissors').innerHTML
+
+if (computerResult==='Scissors') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Draw!'
+}
+else if (computerResult==='Rock') {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Lose!'
+}
+else {
+  document.getElementById('computerPick').innerHTML=`The Computer picked: ${computerResult}`
+  document.getElementById('playerPick').innerHTML=`You Picked: ${playerChoice}`
+  document.getElementById('outcome').innerHTML='You Win!'
+}
+
+
+
+}
+
+  </script>
+</body>
+</html>
